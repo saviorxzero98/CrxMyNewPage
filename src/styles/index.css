@@ -45,7 +45,7 @@ body
     border-radius: 4px;
 }
 
-.SearchBar {
+#SearchBar {
     padding: 4px 4px 4px 4px;
     position: fixed;
     width: calc(60% + 200px);
@@ -103,18 +103,28 @@ body
     color: #a1a192;
 }
 
-
-#HorizontalMenu 
+#HeaderBar 
 {
-    margin: 0px;
+	margin: 0px;
     -webkit-user-select: none;
     background-color: #FFFFFF;
     position: fixed;
 	left: 0px;
-    top: 30px;
+    top: 0px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
 	width: 100%
+}
+
+#BookmarkBarSpace 
+{
+	background-color: #E9E9E9;
+	height: 33px;
+}
+
+#HorizontalMenu 
+{
+    
 }
 #HorizontalMenu ul {
     list-style-type: none;
