@@ -131,18 +131,20 @@ $(function () {
 	    }
 	}
 
-	$('li').click(function()
-	{
-		if ($(this).data('href'))
-		{
+	$('li').click(function() {
+		if ($(this).data('href')) {
 			let url = $(this).data('href');
-			// Current Tab
-			chrome.tabs.getCurrent (function (tab) {
-				chrome.tabs.update(tab.id, {url: url});
-			});
-
-			// New Tab
-			//chrome.tabs.create({ url: url });
+			
+			if (url.startsWith('chrome-extension://')) {
+				// New Tab
+				chrome.tabs.create({ url: url });
+			}
+			else {
+				// Current Tab
+				chrome.tabs.getCurrent (function (tab) {
+					chrome.tabs.update(tab.id, { url: url });
+				});
+			}
 		}
 	});
 });
